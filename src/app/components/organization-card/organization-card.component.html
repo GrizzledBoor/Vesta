@@ -1,0 +1,38 @@
+<p-dialog
+  header="Счет организации"
+  [(visible)]="displayDialog"
+  [style]="{width: '50vw'}"
+  [baseZIndex]="10000"
+  [modal]="true"
+  [dismissableMask]="true"
+  (onHide)="close()"
+>
+  <div class="p-fluid" [formGroup]="formGroup">
+    <div class="p-field p-grid">
+      <label for="organizationName" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Наименование организации</label>
+      <div class="p-col-12 p-md-10">
+        <input formControlName="organizationName" id="organizationName" type="text" pInputText
+               placeholder="Наименование организации">
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="taxpayerNumber" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">ИНН</label>
+      <div class="p-col-12 p-md-10">
+        <input formControlName="taxpayerNumber" id="taxpayerNumber" type="text" pInputText placeholder="ИНН">
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="creationDate" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Дата открытия счета</label>
+      <div class="p-col-12 p-md-10">
+        <input formControlName="creationDate" id="creationDate" type="text" pInputText
+               placeholder="Дата открытия счета">
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="balance" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0">Баланс</label>
+      <div class="p-col-12 p-md-10">
+        <p-inputNumber formControlName="balance" inputId="balance" mode="decimal" prefix="₽ " placeholder="₽ 0.00" [minFractionDigits]="2"></p-inputNumber>
+      </div>
+    </div>
+  </div>
+</p-dialog>

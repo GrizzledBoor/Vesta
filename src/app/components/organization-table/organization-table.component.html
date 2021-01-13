@@ -1,0 +1,25 @@
+<div class="table-wrapper">
+  <p-card>
+    <p-table [columns]="cols"
+             [value]="organizationAccounts"
+             [rowHover]="true"
+             (onRowSelect)="openOrganizationCard($event.data)"
+             selectionMode="single">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-card>
+</div>
+
